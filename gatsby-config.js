@@ -1,3 +1,11 @@
+const dotenv = require("dotenv")
+
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config()
+}
+
+const { spaceId, accessToken } = process.env
+
 module.exports = {
   siteMetadata: {
     title: `Canterbury Flower Club`,
@@ -5,6 +13,13 @@ module.exports = {
     author: `Big Tent`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId,
+        accessToken,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -18,15 +33,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Canterbury Flower Club`,
+        short_name: `Flowerclub`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fdc300`,
+        theme_color: `#fdc300`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/yellow-rose-png.jpg`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
