@@ -38,13 +38,11 @@ module.exports = {
         start_url: `/`,
         background_color: `#fdc300`,
         theme_color: `#fdc300`,
-        display: `minimal-ui`,
-        icon: `src/images/yellow-rose-png.jpg`, // This path is relative to the root of the site.
+        display: `standalone`,
+        icon: `src/images/yellow-rose-png.jpg`,
+        include_favicon: true,
       },
     },
     `gatsby-plugin-offline`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 }
