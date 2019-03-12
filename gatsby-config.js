@@ -35,7 +35,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Canterbury Flower Club`,
-        short_name: `Flowerclub`,
+        short_name: `Flower Club`,
         start_url: `/`,
         background_color: `#fdc300`,
         theme_color: `#fdc300`,
