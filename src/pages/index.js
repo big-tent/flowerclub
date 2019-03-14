@@ -29,6 +29,7 @@ const NewsletterList = ({ node }) => (
             __html: node.content.childMarkdownRemark.excerpt,
           }}
         />
+        <p>Click to read more</p>
       </article>
     </Link>
   </li>
