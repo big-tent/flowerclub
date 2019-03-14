@@ -12,10 +12,25 @@ const EventListing = ({ node }) => (
       <h6>{node.date}</h6>
       <div
         dangerouslySetInnerHTML={{
-          __html: node.content.childMarkdownRemark.excerpt,
+          __html: node.content.childMarkdownRemark.html,
         }}
       />
     </article>
+  </li>
+)
+
+const NewsletterList = ({ node }) => (
+  <li>
+    <Link to={node.slug}>
+      <article>
+        <h2>{node.title}</h2>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: node.content.childMarkdownRemark.excerpt,
+          }}
+        />
+      </article>
+    </Link>
   </li>
 )
 
@@ -30,6 +45,11 @@ const IndexPage = ({ data }) => (
     <ul>
       {data.allContentfulEvent.edges.map(edge => (
         <EventListing node={edge.node} />
+      ))}
+    </ul>
+    <ul>
+      {data.allContentfulNewsletter.edges.map(edge => (
+        <NewsletterList node={edge.node} />
       ))}
     </ul>
     <Link to="/page-2/">Go to page 2</Link>
@@ -47,10 +67,23 @@ export const indexQuery = graphql`
           title
           content {
             childMarkdownRemark {
-              excerpt
+              html
             }
           }
           slug
+        }
+      }
+    }
+    allContentfulNewsletter {
+      edges {
+        node {
+          title
+          slug
+          content {
+            childMarkdownRemark {
+              excerpt
+            }
+          }
         }
       }
     }
