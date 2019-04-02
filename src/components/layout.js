@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Nav from "./nav"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -19,6 +20,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Nav />
         <div
           style={{
             margin: `0 auto`,
@@ -29,9 +31,12 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with &hearts; by
-            {` `}
-            <a href="https://www.bigtent.media">Big Tent</a>
+            <h6>© Canterbury Flower Club {new Date().getFullYear()}</h6>
+            <h6>
+              Built with &hearts; by
+              {` `}
+              <a href="https://www.bigtent.media">Big Tent</a>
+            </h6>
           </footer>
         </div>
       </>
