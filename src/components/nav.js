@@ -4,17 +4,20 @@ import styled from "styled-components"
 
 const NavLinks = styled.nav`
   a {
-    color: rebeccapurple;
-    margin-left: 1rem;
+    color: #181414;
+    margin-left: 2rem;
     text-decoration: none;
     :hover {
-      color: black;
+      color: #cccccc;
     }
   }
   display: flex;
+  align-items: center;
+  /* max-height: 4rem; */
 `
 const NavLink = styled(Link)`
-  font-size: 1.5rem;
+  font-size: 2.1vw;
+  font-weight: 600;
 `
 
 const Nav = () => (
