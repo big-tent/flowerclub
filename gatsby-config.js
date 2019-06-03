@@ -41,7 +41,7 @@ module.exports = {
         background_color: `#fdc300`,
         theme_color: `#fdc300`,
         display: `standalone`,
-        icon: `src/images/yellow-rose-clipart-svg-829971-2866508.png`,
+        icon: `src/images/flower-club-logo-flower.svg`,
         include_favicon: true,
       },
     },
