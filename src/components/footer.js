@@ -19,6 +19,7 @@ const FooterWrapper = styled.footer`
 
 const FooterText = styled.h6`
   font-size: 0.6rem;
+  font-weight: 500;
 `
 
 const Footer = () => (
