@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
-  background: rebeccapurple;
-  color: #fefefe;
+  color: rebeccapurple;
   display: flex;
   justify-content: space-between;
   margin-top: 5vh;

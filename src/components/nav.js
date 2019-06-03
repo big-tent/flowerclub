@@ -4,33 +4,26 @@ import styled from "styled-components"
 
 const NavLinks = styled.nav`
   a {
-    color: #fefefe;
-    margin-right: 1rem;
+    color: rebeccapurple;
+    margin-left: 1rem;
     text-decoration: none;
     :hover {
-      color: #a9a9a9;
+      color: black;
     }
   }
   display: flex;
 `
+const NavLink = styled(Link)`
+  font-size: 1.5rem;
+`
 
 const Nav = () => (
   <NavLinks>
-    <h5>
-      <Link to="/">Home</Link>
-    </h5>
-    <h5>
-      <Link to="/events">Events</Link>
-    </h5>
-    <h5>
-      <Link to="/news">News</Link>
-    </h5>
-    <h5>
-      <Link to="/gallery">Gallery</Link>
-    </h5>
-    <h5>
-      <Link to="/contact">Contact</Link>
-    </h5>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/events">Events</NavLink>
+    <NavLink to="/news">News</NavLink>
+    <NavLink to="/gallery">Gallery</NavLink>
+    <NavLink to="/contact">Contact</NavLink>
   </NavLinks>
 )
 
