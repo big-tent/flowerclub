@@ -8,7 +8,7 @@ const NavLinks = styled.nav`
     margin-left: 2rem;
     text-decoration: none;
     :hover {
-      color: #cccccc;
+      color: #66a824;
     }
   }
   display: flex;
