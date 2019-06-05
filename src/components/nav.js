@@ -13,7 +13,6 @@ const NavLinks = styled.nav`
   }
   display: flex;
   align-items: center;
-  /* max-height: 4rem; */
 `
 const NavLink = styled(Link)`
   font-size: 2.1vw;
@@ -22,11 +21,21 @@ const NavLink = styled(Link)`
 
 const Nav = () => (
   <NavLinks>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/events">Events</NavLink>
-    <NavLink to="/news">News</NavLink>
-    <NavLink to="/gallery">Gallery</NavLink>
-    <NavLink to="/contact">Contact</NavLink>
+    <NavLink to="/" activeStyle={{ color: "#66a824" }}>
+      Home
+    </NavLink>
+    <NavLink to="/events" activeStyle={{ color: "#66a824" }}>
+      Events
+    </NavLink>
+    <NavLink to="/news" activeStyle={{ color: "#66a824" }}>
+      News
+    </NavLink>
+    <NavLink to="/gallery" activeStyle={{ color: "#66a824" }}>
+      Gallery
+    </NavLink>
+    <NavLink to="/contact" activeStyle={{ color: "#66a824" }}>
+      Contact
+    </NavLink>
   </NavLinks>
 )
 
