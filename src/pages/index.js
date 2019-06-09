@@ -36,18 +36,18 @@ const MeetingHeader = styled.h2`
   background: #ccedab;
   border-radius: 47px;
   color: #193003;
+  font-size: 30px;
   margin-bottom: 1rem;
   padding: 0.5rem;
   text-align: center;
-  width: 20rem;
+  width: 17rem;
 `
 
 const MeetingText = styled.h4`
   font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 49px;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.3;
   color: #193003;
   a {
     text-decoration: none;
@@ -72,7 +72,7 @@ const IndexPage = () => (
         </LandingMessage>
         <MeetingHeader>NEXT MEETING</MeetingHeader>
         <MeetingText>
-          Monday, April 25, 8pm
+          Monday, July 1, 8pm
           <br />
           <a href="https://www.google.com/maps/place/St+Dunstan's+Church,+Canterbury/@51.283687,1.0685673,17z/data=!4m5!3m4!1s0x47decbb75bd7c775:0x997b786bae47a78f!8m2!3d51.2836868!4d1.0707559">
             St Dunstan’s Church Hall
