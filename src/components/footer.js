@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
   border-bottom: 4px solid #578f1e;
-  color: hsla(0, 9%, 9%, 0.4);
+  color: hsla(0, 9%, 9%, 0.3);
   display: flex;
   justify-content: space-between;
   margin-top: 5vh;

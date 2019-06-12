@@ -15,7 +15,7 @@ const NavLinks = styled.nav`
   align-items: center;
 `
 const NavLink = styled(Link)`
-  font-size: 2.1vw;
+  font-size: 2vw;
   font-weight: 600;
 `
 
