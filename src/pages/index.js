@@ -1,18 +1,21 @@
 import React from "react"
 import styled from "styled-components"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 
 const IndexWrapper = styled.div`
   display: flex;
   justify-content: center;
 `
 
-const HeroImage = styled.div`
-  background: blue;
+const HeroImage = styled(Img)`
+  object-fit: cover;
   height: 500px;
-  min-width: 35vw;
+  width: 500px;
 `
 
 const LandingText = styled.section`
@@ -58,11 +61,14 @@ const MeetingText = styled.h4`
   }
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`Canterbury`, `Flower`, `Club`]} />
     <IndexWrapper>
-      <HeroImage />
+      <HeroImage
+        fluid={data.contentfulHeroImage.image.fluid}
+        alt={data.contentfulHeroImage.caption}
+      />
       <LandingText>
         <LandingHeader> Welcome to Canterbury Flower Club</LandingHeader>
         <LandingMessage>
@@ -84,3 +90,16 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const heroQuery = graphql`
+  query MyQuery {
+    contentfulHeroImage {
+      image {
+        fluid {
+          src
+        }
+      }
+      caption
+    }
+  }
+`
