@@ -7,9 +7,10 @@ import Nav from "./nav"
 import logo from "../images/canterbury-flower-club-logo.svg"
 
 const HeaderHolder = styled.header`
+  background: linear-gradient(90˝deg, #fffee6 0%, #fffefa 100%);
   display: flex;
   justify-content: space-between;
-  padding: 1rem 5rem;
+  padding: 1rem 9vw;
 `
 
 const LogoHolder = styled.img`

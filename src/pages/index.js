@@ -1,17 +1,106 @@
 import React from "react"
+import styled from "styled-components"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const HeroImage = styled(Img)`
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  max-height: 64vh;
+  min-width: 35vw;
+`
+
+const LandingText = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin-left: 7vw;
+  max-width: 30rem;
+`
+const LandingHeader = styled.h1`
+  color: #181414;
+  font-size: 2.8vw;
+  margin-bottom: 3rem;
+`
+const LandingMessage = styled.p`
+  color: #181414;
+  font-size: 1.7vw;
+  margin-bottom: 3rem;
+`
+
+const MeetingHeader = styled.h2`
+  background: #ccedab;
+  border-radius: 47px;
+  color: #193003;
+  font-size: 2.1vw;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 17rem;
+`
+
+const MeetingText = styled.h4`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.1vw;
+  line-height: 1.3;
+  color: #193003;
+  a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+    :hover {
+      color: #407010;
+    }
+  }
+`
+
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`Canterbury`, `Flower`, `Club`]} />
-    <h1>Hello Flower People!</h1>
-    <p>
-      This is not at all what it will look like - just getting Contentful
-      working...
-    </p>
+    <IndexWrapper>
+      <HeroImage
+        fluid={data.contentfulHeroImage.image.fluid}
+        alt={data.contentfulHeroImage.caption}
+      />
+      <LandingText>
+        <LandingHeader> Welcome to Canterbury Flower Club</LandingHeader>
+        <LandingMessage>
+          We have a varied programme for all abilities. We hold demonstrations,
+          workshops and competitions, giving you the opportunity to increase
+          your skills and have fun
+        </LandingMessage>
+        <MeetingHeader>NEXT MEETING</MeetingHeader>
+        <MeetingText>
+          Monday, July 1, 8pm
+          <br />
+          <a href="https://www.google.com/maps/place/St+Dunstan's+Church,+Canterbury/@51.283687,1.0685673,17z/data=!4m5!3m4!1s0x47decbb75bd7c775:0x997b786bae47a78f!8m2!3d51.2836868!4d1.0707559">
+            St Dunstan’s Church Hall
+          </a>
+        </MeetingText>
+      </LandingText>
+    </IndexWrapper>
   </Layout>
 )
 
 export default IndexPage
+
+export const heroQuery = graphql`
+  query MyQuery {
+    contentfulHeroImage {
+      image {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      caption
+    }
+  }
+`

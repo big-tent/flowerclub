@@ -2,15 +2,16 @@ import React from "react"
 import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
-  color: hsla(0, 9%, 9%, 0.4);
+  color: hsla(0, 9%, 9%, 0.3);
   display: flex;
   justify-content: space-between;
-  margin-top: 5vh;
-  padding: 1rem 5rem;
+  /* margin-top: 5vh; */
+  padding: 1rem 9vw;
   a {
     color: inherit;
     font-weight: 800;
     text-decoration: none;
+    transition: all 1s;
     :hover {
       color: #ff8001;
     }

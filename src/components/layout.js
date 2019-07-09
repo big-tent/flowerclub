@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Header from "./header"
+import LinkButtons from "./linkbuttons"
 import Footer from "./footer"
 import "./layout.css"
 
@@ -14,8 +15,7 @@ const Background = styled.div`
 `
 
 const MainWrapper = styled.main`
-  min-height: 70vh;
-  padding: 1rem 5rem;
+  padding: 2rem 9vw;
 `
 
 const Layout = ({ children }) => (
@@ -31,6 +31,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <Background>
+        <LinkButtons />
         <Header siteTitle={data.site.siteMetadata.title} />
         <MainWrapper>{children}</MainWrapper>
         <Footer />
