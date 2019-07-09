@@ -10,7 +10,7 @@ const HeaderHolder = styled.header`
   background: linear-gradient(90˝deg, #fffee6 0%, #fffefa 100%);
   display: flex;
   justify-content: space-between;
-  padding: 1rem 7rem;
+  padding: 1rem 9vw;
 `
 
 const LogoHolder = styled.img`

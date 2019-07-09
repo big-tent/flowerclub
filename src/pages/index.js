@@ -15,23 +15,23 @@ const HeroImage = styled(Img)`
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.5);
   object-fit: cover;
   max-height: 64vh;
-  width: 35vw;
+  min-width: 35vw;
 `
 
 const LandingText = styled.section`
   display: flex;
   flex-direction: column;
-  margin-left: 5rem;
+  margin-left: 7vw;
   max-width: 30rem;
 `
 const LandingHeader = styled.h1`
   color: #181414;
-  font-size: 42px;
+  font-size: 2.8vw;
   margin-bottom: 3rem;
 `
 const LandingMessage = styled.p`
   color: #181414;
-  font-size: 24px;
+  font-size: 1.7vw;
   margin-bottom: 3rem;
 `
 
@@ -39,7 +39,7 @@ const MeetingHeader = styled.h2`
   background: #ccedab;
   border-radius: 47px;
   color: #193003;
-  font-size: 30px;
+  font-size: 2.1vw;
   margin-bottom: 1rem;
   padding: 0.5rem;
   text-align: center;
@@ -49,12 +49,13 @@ const MeetingHeader = styled.h2`
 const MeetingText = styled.h4`
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 2.1vw;
   line-height: 1.3;
   color: #193003;
   a {
-    text-decoration: none;
     color: inherit;
+    font-weight: 400;
+    text-decoration: none;
     :hover {
       color: #407010;
     }

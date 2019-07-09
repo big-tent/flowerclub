@@ -14,8 +14,7 @@ const Background = styled.div`
 `
 
 const MainWrapper = styled.main`
-  min-height: 70vh;
-  padding: 2rem 7rem;
+  padding: 2rem 9vw;
 `
 
 const Layout = ({ children }) => (

@@ -2,12 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
-  border-bottom: 4px solid #578f1e;
   color: hsla(0, 9%, 9%, 0.3);
   display: flex;
   justify-content: space-between;
-  margin-top: 5vh;
-  padding: 1rem 7rem;
+  /* margin-top: 5vh; */
+  padding: 1rem 9vw;
   a {
     color: inherit;
     font-weight: 800;
