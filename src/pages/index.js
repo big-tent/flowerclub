@@ -5,17 +5,17 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Image from "../components/image"
 
 const IndexWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `
 
 const HeroImage = styled(Img)`
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.5);
   object-fit: cover;
-  height: 500px;
-  width: 500px;
+  max-height: 64vh;
+  width: 35vw;
 `
 
 const LandingText = styled.section`
@@ -96,7 +96,7 @@ export const heroQuery = graphql`
     contentfulHeroImage {
       image {
         fluid {
-          src
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       caption

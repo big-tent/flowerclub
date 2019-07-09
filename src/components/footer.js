@@ -7,11 +7,12 @@ const FooterWrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   margin-top: 5vh;
-  padding: 1rem 5rem;
+  padding: 1rem 7rem;
   a {
     color: inherit;
     font-weight: 800;
     text-decoration: none;
+    transition: all 1s;
     :hover {
       color: #ff8001;
     }
