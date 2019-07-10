@@ -97,7 +97,7 @@ export const heroQuery = graphql`
     contentfulHeroImage {
       image {
         fluid {
-          ...GatsbyContentfulFluid_withWebp
+          src
         }
       }
       caption
