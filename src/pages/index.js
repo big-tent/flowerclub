@@ -21,7 +21,7 @@ const HeroImage = styled(Img)`
   min-width: 35vw;
   @media (max-width: 900px) {
     align-self: center;
-    height: 45vh;
+    height: 40vh;
     width: 55vw;
   }
 `
@@ -91,7 +91,7 @@ const MeetingText = styled.h4`
     }
   }
   @media (max-width: 900px) {
-    font-size: 3.2vw;
+    font-size: 3vw;
   }
 `
 
