@@ -15,6 +15,9 @@ const HeaderHolder = styled.header`
 
 const LogoHolder = styled.img`
   width: 20vw;
+  @media (max-width: 900px) {
+    width: 25vw;
+  }
 `
 
 const Header = () => (

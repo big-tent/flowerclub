@@ -19,6 +19,9 @@ const Background = styled.div`
 const MainWrapper = styled.main`
   padding: 2rem 9vw;
   flex: auto;
+  @media (max-width: 900px) {
+    padding-top: 1rem;
+  }
 `
 
 const Layout = ({ children }) => (
