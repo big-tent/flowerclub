@@ -10,6 +10,9 @@ const NavLinks = styled.nav`
     :hover {
       color: #66a824;
     }
+    @media (max-width: 900px) {
+      margin-left: 1rem;
+    }
   }
   display: flex;
   align-items: center;
@@ -17,6 +20,9 @@ const NavLinks = styled.nav`
 const NavLink = styled(Link)`
   font-size: 2vw;
   font-weight: 600;
+  @media (max-width: 900px) {
+    font-size: 2.5vw;
+  }
 `
 
 const Nav = () => (
