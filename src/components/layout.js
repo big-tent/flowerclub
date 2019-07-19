@@ -11,11 +11,14 @@ import "./layout.css"
 const Background = styled.div`
   background: linear-gradient(122.01deg, #fffee6 0%, #fffefa 100%);
   border-top: 8px solid #578f1e;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 `
 
 const MainWrapper = styled.main`
   padding: 2rem 9vw;
+  flex: auto;
 `
 
 const Layout = ({ children }) => (
@@ -33,9 +36,7 @@ const Layout = ({ children }) => (
       <Background>
         <LinkButtons />
         <Header siteTitle={data.site.siteMetadata.title} />
-        <MainWrapper>
-        {children}
-        </MainWrapper>
+        <MainWrapper>{children}</MainWrapper>
         <Footer />
       </Background>
     )}
