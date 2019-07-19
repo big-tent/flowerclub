@@ -15,6 +15,9 @@ const FooterWrapper = styled.footer`
       color: #ff8001;
     }
   }
+  @media (max-width: 900px) {
+    margin-bottom: 50px;
+  }
 `
 
 const FooterText = styled.h6`
