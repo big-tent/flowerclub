@@ -24,6 +24,10 @@ const HeroImage = styled(Img)`
     height: 40vh;
     width: 55vw;
   }
+  @media (max-width: 600px) {
+    height: 30vh;
+    width: 55vw;
+  }
 `
 
 const LandingText = styled.div`
@@ -43,6 +47,9 @@ const LandingHeader = styled.h1`
     font-size: 4.5vw;
     margin-bottom: 1.5rem;
   }
+  @media (max-width: 600px) {
+    font-size: 6vw;
+  }
 `
 const LandingMessage = styled.p`
   color: #181414;
@@ -51,6 +58,9 @@ const LandingMessage = styled.p`
   @media (max-width: 900px) {
     font-size: 3vw;
     margin-bottom: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 4vw;
   }
 `
 
@@ -66,6 +76,9 @@ const MeetingHeader = styled.h2`
   @media (max-width: 900px) {
     font-size: 3.5vw;
   }
+  @media (max-width: 600px) {
+    font-size: 4vw;
+  }
 `
 
 const MeetingTextHolder = styled.div`
@@ -73,6 +86,9 @@ const MeetingTextHolder = styled.div`
   flex-direction: column;
   @media (max-width: 900px) {
     flex-direction: row;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
   }
 `
 
@@ -92,6 +108,9 @@ const MeetingText = styled.h4`
   }
   @media (max-width: 900px) {
     font-size: 3vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 4.5vw;
   }
 `
 
@@ -131,7 +150,7 @@ export const heroQuery = graphql`
     contentfulHeroImage {
       image {
         fluid {
-          src
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       caption
