@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+import Burger from "./burger"
+
 const NavLinks = styled.nav`
   a {
     color: #181414;
@@ -17,11 +19,15 @@ const NavLinks = styled.nav`
   display: flex;
   align-items: center;
 `
+
 const NavLink = styled(Link)`
   font-size: 2vw;
   font-weight: 600;
   @media (max-width: 900px) {
     font-size: 2.5vw;
+  }
+  @media (max-width: 600px) {
+    display: none;
   }
 `
 
@@ -42,6 +48,7 @@ const Nav = () => (
     <NavLink to="/contact" activeStyle={{ color: "#66a824" }}>
       Contact
     </NavLink>
+    <Burger />
   </NavLinks>
 )
 

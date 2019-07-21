@@ -18,6 +18,11 @@ const LogoHolder = styled.img`
   @media (max-width: 900px) {
     width: 25vw;
   }
+  @media (max-width: 600px) {
+    width: 50vw;
+  }
+  position: relative;
+  z-index: 2;
 `
 
 const Header = () => (
