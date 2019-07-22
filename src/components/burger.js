@@ -61,7 +61,7 @@ const MenuHolder = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 6rem 9vw 6rem;
+  padding: 8rem 9vw 6rem;
   position: fixed;
   width: 100vw;
   height: 100vh;
