@@ -13,14 +13,14 @@ const MenuToggle = styled.div`
 `
 
 const MenuInput = styled.input`
+  cursor: pointer;
   display: block;
-  width: 40px;
   height: 32px;
+  left: -5px;
+  opacity: 0;
   position: absolute;
   top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
+  width: 40px;
   z-index: 2;
   -webkit-touch-callout: none;
   :checked ~ span {
@@ -43,34 +43,35 @@ const MenuInput = styled.input`
 `
 
 const BurgerSpan = styled.span`
+  background: #193003;
+  border-radius: 3px;
   display: block;
-  width: 40px;
   height: 4px;
   margin-bottom: 6px;
   position: relative;
-  background: #193003;
-  border-radius: 3px;
-  z-index: 1;
   transform-origin: 5.5px 3px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  width: 40px;
+  z-index: 1;
 `
 
 const MenuHolder = styled.ul`
   background: linear-gradient(180deg, #578f1e 0%, #69e052 100%);
   display: flex;
   flex-direction: column;
+  height: 100vh;
   justify-content: space-around;
+  list-style: none;
   padding: 8rem 9vw 6rem;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
   right: 0;
   top: 0;
-  list-style: none;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
 `
 
 const MenuItem = styled.li`
