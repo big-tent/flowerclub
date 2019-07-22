@@ -26,7 +26,7 @@ const EventHolder = styled.article`
 
 const DateHolder = styled.div`
   display: flex;
-  margin-right: 3rem;
+  margin-right: 1rem;
   align-items: center;
 `
 
@@ -35,19 +35,39 @@ const Date = styled.h2`
   font-size: 36px;
   line-height: 49px;
   letter-spacing: -0.01em;
-  margin-left: 1rem;
+  margin-left: 0.75rem;
   color: #2b4e09;
   width: 20rem;
 `
+
 const EventWords = styled.div``
+
+const EventTitle = styled.h2`
+  color: #333333;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+`
+
+const EventCopy = styled.div`
+  h1,
+  h2,
+  h3 {
+    color: #808080;
+    font-size: 30px;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    color: #333333;
+  }
+`
 
 const EventListing = ({ node }) => (
   <EventListingItem>
     <EventHolder>
       <DateHolder>
         <svg
-          width="30"
-          height="30"
+          width="28"
           viewBox="0 0 44 44"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +88,8 @@ const EventListing = ({ node }) => (
         <Date>{node.date}</Date>
       </DateHolder>
       <EventWords>
-        <h2>{node.title}</h2>
-        <div
+        <EventTitle>{node.title}</EventTitle>
+        <EventCopy
           dangerouslySetInnerHTML={{
             __html: node.content.childMarkdownRemark.html,
           }}
