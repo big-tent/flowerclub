@@ -22,6 +22,9 @@ const EventListingItem = styled.li`
 const EventHolder = styled.article`
   display: flex;
   align-items: flex-start;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 const DateHolder = styled.div`
@@ -38,6 +41,13 @@ const Date = styled.h2`
   margin-left: 0.75rem;
   color: #2b4e09;
   width: 20rem;
+  @media (max-width: 900px) {
+    font-size: 30px;
+    width: auto;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `
 
 const EventWords = styled.div``
@@ -47,13 +57,18 @@ const EventTitle = styled.h2`
   font-size: 40px;
   font-weight: 500;
   margin-bottom: 1rem;
+  @media (max-width: 900px) {
+    font-size: 30px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 `
 
 const EventCopy = styled.div`
   h1,
   h2,
   h3 {
-    color: #808080;
+    color: #a6a6a6;
     font-size: 30px;
     margin-bottom: 0.5rem;
   }
