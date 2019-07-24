@@ -4,16 +4,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-const EventsTitle = styled.h1`
-  border-bottom: 2px solid #cccccc;
-  font-size: 48px;
-  margin: 0;
-  padding-bottom: 2rem;
-  @media (max-width: 600px) {
-    font-size: 8.5vw;
-  }
-`
+import PageHeader from "../components/pageheader"
 
 const EventListingItem = styled.li`
   border-bottom: 2px solid #cccccc;
@@ -130,7 +121,7 @@ const EventListing = ({ node }) => (
 const EventsPage = ({ data }) => (
   <Layout>
     <SEO title="Events" />
-    <EventsTitle>Upcoming events</EventsTitle>
+    <PageHeader pagetitle="Upcoming events" />
     <ul>
       {data.allContentfulEvent.edges.map(edge => (
         <EventListing node={edge.node} />
