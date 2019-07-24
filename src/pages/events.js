@@ -10,6 +10,9 @@ const EventsTitle = styled.h1`
   font-size: 48px;
   margin: 0;
   padding-bottom: 2rem;
+  @media (max-width: 600px) {
+    font-size: 8.5vw;
+  }
 `
 
 const EventListingItem = styled.li`
@@ -17,6 +20,9 @@ const EventListingItem = styled.li`
   list-style: none;
   padding: 2rem 0;
   margin: 0;
+  @media (max-width: 600px) {
+    padding: 3.5vh 0;
+  }
 `
 
 const EventHolder = styled.article`
@@ -46,7 +52,7 @@ const Date = styled.h2`
     width: auto;
   }
   @media (max-width: 600px) {
-    font-size: 18px;
+    font-size: 6.5vw;
   }
 `
 
@@ -62,6 +68,10 @@ const EventTitle = styled.h2`
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
+  @media (max-width: 600px) {
+    font-size: 6.5vw;
+    margin-top: 0;
+  }
 `
 
 const EventCopy = styled.div`
@@ -71,6 +81,9 @@ const EventCopy = styled.div`
     color: #a6a6a6;
     font-size: 30px;
     margin-bottom: 0.5rem;
+    @media (max-width: 600px) {
+      font-size: 5.6vw;
+    }
   }
   p {
     color: #333333;

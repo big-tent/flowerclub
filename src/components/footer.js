@@ -23,7 +23,7 @@ const FooterWrapper = styled.footer`
 const FooterText = styled.h6`
   font-size: 0.6rem;
   @media (max-width: 600px) {
-    font-size: 0.5rem;
+    font-size: 2.2vw;
   }
 `
 
