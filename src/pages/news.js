@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeader from "../components/pageheader"
 
 const NewsletterList = ({ node }) => (
   <li>
@@ -23,7 +24,7 @@ const NewsletterList = ({ node }) => (
 const NewsPage = ({ data }) => (
   <Layout>
     <SEO title="News" />
-    <h1>News</h1>
+    <PageHeader pagetitle="News" />
     <ul>
       {data.allContentfulNewsletter.edges.map(edge => (
         <NewsletterList node={edge.node} />
