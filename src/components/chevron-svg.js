@@ -1,12 +1,26 @@
 import React from "react"
+import styled from "styled-components"
+
+const SvgHolder = styled.div`
+  width: 35px;
+  height: 35px;
+  @media (max-width: 900px) {
+    width: 25px;
+    height: 25px;
+  }
+  @media (max-width: 600px) {
+    width: 20px;
+    height: 20px;
+  }
+`
 
 const Chevron = props => (
-  <div>
+  <SvgHolder>
     <svg
-      width={props.size}
-      height={props.size}
+      width="100%"
+      height="100%"
       fill="none"
-      viewBox="0 0 100 100"
+      viewBox="0 0 44 44"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -22,7 +36,7 @@ const Chevron = props => (
         fill="#EBF9DC"
       />
     </svg>
-  </div>
+  </SvgHolder>
 )
 
 export default Chevron
