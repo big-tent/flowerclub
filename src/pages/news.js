@@ -7,7 +7,7 @@ import PageHeader from "../components/pageheader"
 
 const NewsletterList = ({ node }) => (
   <li>
-    <Link to={node.slug}>
+    <Link to={`/${node.slug}`}>
       <article>
         <h2>{node.title}</h2>
         <div
@@ -26,8 +26,8 @@ const NewsPage = ({ data }) => (
     <SEO title="News" />
     <PageHeader pagetitle="News" />
     <ul>
-      {data.allContentfulNewsletter.edges.map(edge => (
-        <NewsletterList node={edge.node} />
+      {data.allContentfulNewsletter.edges.map((edge, i) => (
+        <NewsletterList node={edge.node} key={i} />
       ))}
     </ul>
   </Layout>

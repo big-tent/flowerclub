@@ -94,10 +94,10 @@ const Burger = () => (
       <Link to="/events">
         <MenuItem>Events</MenuItem>
       </Link>
-      <Link to="news">
+      <Link to="/news">
         <MenuItem>News</MenuItem>
       </Link>
-      <Link to="gallery">
+      <Link to="/gallery">
         <MenuItem>Gallery</MenuItem>
       </Link>
       <Link to="/contact">

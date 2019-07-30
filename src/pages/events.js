@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
-import Chevron from "../components/chevron-svg"
+import Chevron from "../components/svg/chevron-svg"
 
 const EventListingItem = styled.li`
   border-bottom: 2px solid #cccccc;
@@ -106,8 +106,8 @@ const EventsPage = ({ data }) => (
     <SEO title="Events" />
     <PageHeader pagetitle="Upcoming events" />
     <ul>
-      {data.allContentfulEvent.edges.map(edge => (
-        <EventListing node={edge.node} />
+      {data.allContentfulEvent.edges.map((edge, i) => (
+        <EventListing node={edge.node} key={i} />
       ))}
     </ul>
   </Layout>
