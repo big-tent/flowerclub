@@ -3,10 +3,11 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeader from "../components/pageheader"
 
 const NewsletterList = ({ node }) => (
   <li>
-    <Link to={node.slug}>
+    <Link to={`/${node.slug}`}>
       <article>
         <h2>{node.title}</h2>
         <div
@@ -23,10 +24,10 @@ const NewsletterList = ({ node }) => (
 const NewsPage = ({ data }) => (
   <Layout>
     <SEO title="News" />
-    <h1>News</h1>
+    <PageHeader pagetitle="News" />
     <ul>
-      {data.allContentfulNewsletter.edges.map(edge => (
-        <NewsletterList node={edge.node} />
+      {data.allContentfulNewsletter.edges.map((edge, i) => (
+        <NewsletterList node={edge.node} key={i} />
       ))}
     </ul>
   </Layout>
