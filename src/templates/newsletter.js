@@ -1,8 +1,22 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeader from "../components/pageheader"
+
+const NewsHolder = styled.article`
+  max-width: 750px;
+  margin: 0 auto;
+`
+
+const NewsCopy = styled.div`
+  color: #161616;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.5;
+  margin-top: 2rem;
+`
 
 export default ({ data }) => {
   const post = data.contentfulNewsletter
@@ -12,15 +26,14 @@ export default ({ data }) => {
         title="Newsletter"
         keywords={[`Canterbury`, `Flower`, `Club`, `Newsletter`]}
       />
-      <div>
-        <h1>{post.title}</h1>
-        <h5>{post.date}</h5>
-        <div
+      <NewsHolder>
+        <PageHeader pagetitle={post.title} />
+        <NewsCopy
           dangerouslySetInnerHTML={{
             __html: post.content.childMarkdownRemark.html,
           }}
         />
-      </div>
+      </NewsHolder>
     </Layout>
   )
 }

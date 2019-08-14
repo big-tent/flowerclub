@@ -18,48 +18,50 @@ const NewsListingItem = styled.li`
 
 const NewsLink = styled(Link)`
   text-decoration: none;
+  :hover {
+    cursor: pointer;
+  }
 `
 
-const NewsHolder = styled.article``
+const NewsExcerptHolder = styled.article``
 
-const NewsHeading = styled.h2`
+const NewsExcerptHeading = styled.h2`
+  color: #193003;
   font-weight: 800;
   font-size: 36px;
   line-height: 49px;
   letter-spacing: -0.01em;
-  color: #193003;
+  margin-bottom: 1rem;
 `
 
 const NewsExcerpt = styled.div`
-  font-family: "Libre Baskerville", serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.01em;
   color: #161616;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
 `
 
 const ReadMore = styled.p`
+  color: #a6a6a6;
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
   letter-spacing: -0.01em;
-  color: #a6a6a6;
 `
 
 const NewsletterList = ({ node }) => (
   <NewsListingItem>
     <NewsLink to={`/${node.slug}`}>
-      <NewsHolder>
-        <NewsHeading>{node.title}</NewsHeading>
+      <NewsExcerptHolder>
+        <NewsExcerptHeading>{node.title}</NewsExcerptHeading>
         <NewsExcerpt
           dangerouslySetInnerHTML={{
             __html: node.content.childMarkdownRemark.excerpt,
           }}
         />
         <ReadMore>Click to read more</ReadMore>
-      </NewsHolder>
+      </NewsExcerptHolder>
     </NewsLink>
   </NewsListingItem>
 )
