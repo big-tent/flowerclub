@@ -48,6 +48,9 @@ const ReadMore = styled.p`
   font-size: 24px;
   line-height: 33px;
   letter-spacing: -0.01em;
+  :hover {
+    color: #808080;
+  }
 `
 
 const NewsletterList = ({ node }) => (
