@@ -11,12 +11,28 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulImage {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
   `).then(result => {
     result.data.allContentfulNewsletter.edges.forEach(({ node }) => {
       createPage({
         path: node.slug,
         component: path.resolve("src/templates/newsletter.js"),
+        context: {
+          slug: node.slug,
+        },
+      })
+    })
+    result.data.allContentfulImage.edges.forEach(({ node }) => {
+      createPage({
+        path: node.slug,
+        component: path.resolve("src/templates/gallery.js"),
         context: {
           slug: node.slug,
         },
