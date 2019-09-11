@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
@@ -14,7 +14,9 @@ const GalleryListingItem = styled.li`
 
 const GalleryList = ({ node }) => (
   <GalleryListingItem>
-    <Img fluid={node.image.fluid} alt={node.image.description} />
+    <Link to={`/${node.slug}`}>
+      <Img fluid={node.image.fluid} alt={node.image.description} />
+    </Link>
   </GalleryListingItem>
 )
 
