@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allContentfulImage.edges.forEach(({ node }) => {
       createPage({
         path: node.slug,
-        component: path.resolve("src/templates/gallery.js"),
+        component: path.resolve("src/templates/gallerytemplate.js"),
         context: {
           slug: node.slug,
         },
