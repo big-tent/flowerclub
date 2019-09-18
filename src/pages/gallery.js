@@ -16,6 +16,7 @@ const GalleryList = ({ node }) => (
   <GalleryListingItem>
     <Link to={`/${node.slug}`}>
       <Img fluid={node.image.fluid} alt={node.image.description} />
+      <h3>{node.image.description}</h3>
     </Link>
   </GalleryListingItem>
 )
@@ -25,7 +26,7 @@ const GalleryPage = ({ data }) => (
     <SEO title="Gallery" keywords={[`Canterbury`, `Flower`, `Club`]} />
     <PageHeader pagetitle="Gallery" />
     <ul>
-      {data.allContentfulImage.edges.map((edge, i) => (
+      {data.allContentfulImage.group[2].edges.map((edge, i) => (
         <GalleryList node={edge.node} key={i} />
       ))}
     </ul>
@@ -37,16 +38,18 @@ export default GalleryPage
 export const galleryQuery = graphql`
   query GalleryQuery {
     allContentfulImage {
-      edges {
-        node {
-          image {
-            description
-            fluid {
-              ...GatsbyContentfulFluid_withWebp
+      group(field: event, limit: 1) {
+        edges {
+          node {
+            image {
+              description
+              fluid {
+                ...GatsbyContentfulFluid_withWebp
+              }
             }
+            slug
+            event
           }
-          slug
-          event
         }
       }
     }

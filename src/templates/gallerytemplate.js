@@ -12,8 +12,12 @@ const GalleryHolder = styled.article`
   padding: 2rem 0;
 `
 
+const EventGalleryListingItem = styled.li`
+  list-style: none;
+  padding: 2rem 0;
+`
+
 export default ({ data, pageContext }) => {
-  const gallery = data.contentfulImage
   const { event } = pageContext
   return (
     <Layout>
@@ -21,15 +25,17 @@ export default ({ data, pageContext }) => {
         title="Gallery"
         keywords={[`Canterbury`, `Flower`, `Club`, `Gallery`, `Pictures`]}
       />
-      <PageHeader pagetitle={gallery.event} />
+      <PageHeader pagetitle={event} />
       <GalleryHolder>
-        <h4>{gallery.slug}</h4>
-        <h2>{event}</h2>
-        <Img fluid={gallery.image.fluid} alt={gallery.image.description} />
-        <p>{gallery.image.description}</p>
         <ul>
           {data.allContentfulImage.edges.map((edge, i) => (
-            <li key={i}>{edge.node.slug}</li>
+            <EventGalleryListingItem key={i}>
+              <Img
+                fluid={edge.node.image.fluid}
+                alt={edge.node.image.description}
+              />
+              {edge.node.slug}
+            </EventGalleryListingItem>
           ))}
         </ul>
       </GalleryHolder>
@@ -38,20 +44,16 @@ export default ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query galleryTemplateQuery($slug: String!, $event: String!) {
-    contentfulImage(slug: { eq: $slug }) {
-      slug
-      event
-      image {
-        description
-        fluid {
-          ...GatsbyContentfulFluid_withWebp
-        }
-      }
-    }
+  query galleryTemplateQuery($event: String!) {
     allContentfulImage(filter: { event: { eq: $event } }) {
       edges {
         node {
+          image {
+            description
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
           slug
           event
         }
