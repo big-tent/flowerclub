@@ -12,25 +12,33 @@ const GalleryHolder = styled.article`
   padding: 2rem 0;
 `
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const gallery = data.contentfulImage
+  const { event } = pageContext
   return (
     <Layout>
       <SEO
         title="Gallery"
         keywords={[`Canterbury`, `Flower`, `Club`, `Gallery`, `Pictures`]}
       />
-      <PageHeader pagetitle="Event gallery" />
-      <GalleryHolder>Hello this is a gallery</GalleryHolder>
-      <h2>{gallery.slug}</h2>
-      <h2>{gallery.event}</h2>
-      <Img fluid={gallery.image.fluid} alt={gallery.image.description} />
+      <PageHeader pagetitle={gallery.event} />
+      <GalleryHolder>
+        <h4>{gallery.slug}</h4>
+        <h2>{event}</h2>
+        <Img fluid={gallery.image.fluid} alt={gallery.image.description} />
+        <p>{gallery.image.description}</p>
+        <ul>
+          {data.allContentfulImage.edges.map((edge, i) => (
+            <li key={i}>{edge.node.slug}</li>
+          ))}
+        </ul>
+      </GalleryHolder>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query galleryTemplateQuery($slug: String!) {
+  query galleryTemplateQuery($slug: String!, $event: String!) {
     contentfulImage(slug: { eq: $slug }) {
       slug
       event
@@ -38,6 +46,14 @@ export const query = graphql`
         description
         fluid {
           ...GatsbyContentfulFluid_withWebp
+        }
+      }
+    }
+    allContentfulImage(filter: { event: { eq: $event } }) {
+      edges {
+        node {
+          slug
+          event
         }
       }
     }

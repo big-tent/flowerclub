@@ -15,6 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             slug
+            event
           }
         }
       }
@@ -35,6 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve("src/templates/gallerytemplate.js"),
         context: {
           slug: node.slug,
+          event: node.event,
         },
       })
     })
