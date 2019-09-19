@@ -21,19 +21,21 @@ const GalleryList = ({ node }) => (
   </GalleryListingItem>
 )
 
-const GalleryPage = ({ data }) => (
-  <Layout>
-    <SEO title="Gallery" keywords={[`Canterbury`, `Flower`, `Club`]} />
-    <PageHeader pagetitle="Gallery" />
-    <ul>
-      {data.allContentfulImage.group[2].edges.map((edge, i) => (
-        <GalleryList node={edge.node} key={i} />
-      ))}
-    </ul>
-  </Layout>
-)
+export default ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Gallery" keywords={[`Canterbury`, `Flower`, `Club`]} />
+      <PageHeader pagetitle="Gallery" />
+      <ul>
+        {data.allContentfulImage.group.map((grou, i) => (
+          <GalleryList node={grou.edges[0].node} key={i} />
+        ))}
+      </ul>
+    </Layout>
+  )
+}
 
-export default GalleryPage
+// export default GalleryPage
 
 export const galleryQuery = graphql`
   query GalleryQuery {
