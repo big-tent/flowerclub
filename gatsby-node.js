@@ -11,6 +11,14 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulImage {
+        edges {
+          node {
+            slug
+            event
+          }
+        }
+      }
     }
   `).then(result => {
     result.data.allContentfulNewsletter.edges.forEach(({ node }) => {
@@ -19,6 +27,16 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve("src/templates/newsletter.js"),
         context: {
           slug: node.slug,
+        },
+      })
+    })
+    result.data.allContentfulImage.edges.forEach(({ node }) => {
+      createPage({
+        path: node.slug,
+        component: path.resolve("src/templates/gallerytemplate.js"),
+        context: {
+          slug: node.slug,
+          event: node.event,
         },
       })
     })
