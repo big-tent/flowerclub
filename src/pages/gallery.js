@@ -20,7 +20,7 @@ const GalleryList = ({ node }) => (
   <GalleryListingItem>
     <Link to={`/${node.slug}`}>
       <GalleryImage fluid={node.image.fluid} alt={node.image.description} />
-      <h3>{node.image.description}</h3>
+      <h3>{node.event}</h3>
     </Link>
   </GalleryListingItem>
 )
