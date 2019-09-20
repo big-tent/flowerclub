@@ -12,10 +12,14 @@ const GalleryListingItem = styled.li`
   padding: 2rem 0;
 `
 
+const GalleryImage = styled(Img)`
+  width: 200px;
+`
+
 const GalleryList = ({ node }) => (
   <GalleryListingItem>
     <Link to={`/${node.slug}`}>
-      <Img fluid={node.image.fluid} alt={node.image.description} />
+      <GalleryImage fluid={node.image.fluid} alt={node.image.description} />
       <h3>{node.image.description}</h3>
     </Link>
   </GalleryListingItem>

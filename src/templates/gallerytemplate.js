@@ -16,6 +16,9 @@ const EventGalleryListingItem = styled.li`
   list-style: none;
   padding: 2rem 0;
 `
+const EventImage = styled(Img)`
+  width: 200px;
+`
 
 export default ({ data, pageContext }) => {
   const { event } = pageContext
@@ -30,11 +33,11 @@ export default ({ data, pageContext }) => {
         <ul>
           {data.allContentfulImage.edges.map((edge, i) => (
             <EventGalleryListingItem key={i}>
-              <Img
+              <EventImage
                 fluid={edge.node.image.fluid}
                 alt={edge.node.image.description}
               />
-              {edge.node.slug}
+              {edge.node.image.description}
             </EventGalleryListingItem>
           ))}
         </ul>
