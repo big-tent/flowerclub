@@ -30,7 +30,7 @@ const MugShot = styled.div`
   background: red;
   border-radius: 30px;
   height: inherit;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   width: 60px;
 `
 
@@ -47,63 +47,84 @@ const Title = styled.h6`
   color: #161616;
 `
 
-const PhoneHolder = styled.div`
+const PhoneHolder = styled.a`
   align-items: center;
   border-bottom: 1px solid #cccccc;
   display: flex;
   padding-bottom: 0.5rem;
+  text-decoration: none;
 `
 
 const PhoneIcon = styled.img`
   height: 28px;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 `
 
 const Phone = styled.p`
   font-size: 36px;
   color: #808080;
+  :hover {
+    font-weight: 600;
+    cursor: pointer;
+  }
 `
 
-const Email = styled.p`
+const Email = styled.a`
   color: #808080;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   padding-top: 0.5rem;
+  text-decoration: none;
+  :hover {
+    color: #4d4d4d;
+    cursor: pointer;
+  }
 `
 
-const ContactPage = () => (
+const ContactPage = ({ data }) => (
   <Layout>
     <SEO title="Contact" keywords={[`Canterbury`, `Flower`, `Club`]} />
     <PageHeader pagetitle="Contact us" />
-    <ContactsGrid>
-      <ContactHolder>
-        <NameHolder>
-          <MugShot />
-          <NameTitleHolder>
-            <Name>Diana Cooper</Name>
-            <Title>Treasurer</Title>
-          </NameTitleHolder>
-        </NameHolder>
-        <PhoneHolder>
-          <PhoneIcon src={phone} alt="phone icon" />
-          <Phone>07886 453 837</Phone>
-        </PhoneHolder>
-        <Email>diana@canterburyflowerclub.com</Email>
-      </ContactHolder>
-      <ContactHolder>
-        <h3>Diana Cooper</h3>
-        <h6>Treasurer</h6>
-        <p>07886 453 837</p>
-        <p>diana@canterburyflowerclub.com</p>
-      </ContactHolder>
-      <ContactHolder>
-        <h3>Diana Cooper</h3>
-        <h6>Treasurer</h6>
-        <p>07886 453 837</p>
-        <p>diana@canterburyflowerclub.com</p>
-      </ContactHolder>
-    </ContactsGrid>
+    <ul>
+      <ContactsGrid>
+        {data.allContentfulContactDetails.edges.map((edge, i) => (
+          <li key={i}>
+            <ContactHolder>
+              <NameHolder>
+                <MugShot />
+                <NameTitleHolder>
+                  <Name>{edge.node.name}</Name>
+                  <Title>{edge.node.title}</Title>
+                </NameTitleHolder>
+              </NameHolder>
+              <PhoneHolder href={"tel:" + edge.node.phoneNumber}>
+                <PhoneIcon src={phone} alt="phone icon" />
+                <Phone>{edge.node.phoneNumber}</Phone>
+              </PhoneHolder>
+              <Email href="mailto:diana@canterburyflowerclub.com">
+                {edge.node.email}
+              </Email>
+            </ContactHolder>
+          </li>
+        ))}
+      </ContactsGrid>
+    </ul>
   </Layout>
 )
 
 export default ContactPage
+
+export const contactQuery = graphql`
+  query contactQuery {
+    allContentfulContactDetails {
+      edges {
+        node {
+          name
+          title
+          phoneNumber
+          email
+        }
+      }
+    }
+  }
+`

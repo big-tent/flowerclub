@@ -7,11 +7,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
 
-const EventGalleryHolder = styled.article`
-  margin: 0 auto;
-  padding: 2rem 0;
-`
-
 const EventGalleryGrid = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
