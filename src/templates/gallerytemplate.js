@@ -7,17 +7,26 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
 
-const GalleryHolder = styled.article`
-  margin: 0 auto;
+const EventGalleryGrid = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 400px;
+  grid-gap: 20px;
   padding: 2rem 0;
 `
 
 const EventGalleryListingItem = styled.li`
   list-style: none;
-  padding: 2rem 0;
 `
+
 const EventImage = styled(Img)`
-  width: 200px;
+  height: 90%;
+`
+
+const EventImageCaption = styled.p`
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 5px;
 `
 
 export default ({ data, pageContext }) => {
@@ -29,19 +38,17 @@ export default ({ data, pageContext }) => {
         keywords={[`Canterbury`, `Flower`, `Club`, `Gallery`, `Pictures`]}
       />
       <PageHeader pagetitle={event} />
-      <GalleryHolder>
-        <ul>
-          {data.allContentfulImage.edges.map((edge, i) => (
-            <EventGalleryListingItem key={i}>
-              <EventImage
-                fluid={edge.node.image.fluid}
-                alt={edge.node.image.description}
-              />
-              {edge.node.image.description}
-            </EventGalleryListingItem>
-          ))}
-        </ul>
-      </GalleryHolder>
+      <EventGalleryGrid>
+        {data.allContentfulImage.edges.map((edge, i) => (
+          <EventGalleryListingItem key={i}>
+            <EventImage
+              fluid={edge.node.image.fluid}
+              alt={edge.node.image.description}
+            />
+            <EventImageCaption>{edge.node.image.description}</EventImageCaption>
+          </EventGalleryListingItem>
+        ))}
+      </EventGalleryGrid>
     </Layout>
   )
 }
