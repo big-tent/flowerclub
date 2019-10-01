@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
-
+import Chevron from "../components/svg/chevron-svg"
 import phone from "../images/phone-icon-grey.svg"
 
 const ContactsGrid = styled.ul`
@@ -84,6 +84,29 @@ const Email = styled.a`
     cursor: pointer;
   }
 `
+const LinkHeader = styled.h2`
+  border-top: 2px solid #cccccc;
+  color: #666666;
+  font-size: 42px;
+  font-weight: bold;
+  padding-top: 2rem;
+`
+const LinkHolder = styled.div`
+  align-items: center;
+  display: flex;
+  margin-top: 1rem;
+`
+
+const Link = styled.a`
+  color: #666666;
+  font-weight: 700;
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 1rem;
+  :hover {
+    color: #578f1e;
+  }
+`
 
 const ContactPage = ({ data }) => (
   <Layout>
@@ -107,6 +130,17 @@ const ContactPage = ({ data }) => (
         </ContactHolder>
       ))}
     </ContactsGrid>
+    <LinkHeader>Links</LinkHeader>
+    <LinkHolder>
+      <Chevron />
+      <Link href="https://www.nafas.org.uk/">
+        National Association of Flower Arranging Societies
+      </Link>
+    </LinkHolder>
+    <LinkHolder>
+      <Chevron />
+      <Link href="https://www.kentfloralart.co.uk/">Kent Nafas</Link>
+    </LinkHolder>
   </Layout>
 )
 
