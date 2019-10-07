@@ -30,9 +30,8 @@ const NameHolder = styled.div`
 `
 
 const MugShot = styled(Img)`
-  background: red;
-  border-radius: 30px;
-  height: 60px;
+  border: 0.3px solid #666666;
+  border-radius: 50%;
   margin-right: 1rem;
   object-fit: cover;
   width: 60px;
@@ -41,22 +40,21 @@ const MugShot = styled(Img)`
 const NameTitleHolder = styled.div``
 
 const Name = styled.h3`
-  color: #161616;
+  color: #333333;
   font-size: 30px;
 `
 
 const Title = styled.h6`
   font-size: 24px;
   font-weight: normal;
-  color: #161616;
+  color: #666666;
 `
 
-const PhoneHolder = styled.a`
+const PhoneHolder = styled.div`
   align-items: center;
   border-bottom: 1px solid #cccccc;
   display: flex;
   padding-bottom: 0.5rem;
-  text-decoration: none;
 `
 
 const PhoneIcon = styled.img`
@@ -64,9 +62,14 @@ const PhoneIcon = styled.img`
   margin-right: 1rem;
 `
 
-const Phone = styled.p`
+const PhoneNumberHolder = styled.div``
+
+const Phone = styled.a`
+  display: block;
   font-size: 36px;
   color: #808080;
+  line-height: 1.1;
+  text-decoration: none;
   :hover {
     font-weight: 600;
     cursor: pointer;
@@ -75,6 +78,7 @@ const Phone = styled.p`
 
 const Email = styled.a`
   color: #808080;
+  display: block;
   font-weight: 700;
   font-size: 18px;
   padding-top: 0.5rem;
@@ -84,6 +88,7 @@ const Email = styled.a`
     cursor: pointer;
   }
 `
+
 const LinkHeader = styled.h2`
   border-top: 2px solid #cccccc;
   color: #666666;
@@ -91,6 +96,7 @@ const LinkHeader = styled.h2`
   font-weight: bold;
   padding-top: 2rem;
 `
+
 const LinkHolder = styled.div`
   align-items: center;
   display: flex;
@@ -122,9 +128,16 @@ const ContactPage = ({ data }) => (
               <Title>{edge.node.title}</Title>
             </NameTitleHolder>
           </NameHolder>
-          <PhoneHolder href={"tel:" + edge.node.phoneNumber}>
+          <PhoneHolder>
             <PhoneIcon src={phone} alt="phone icon" />
-            <Phone>{edge.node.phoneNumber}</Phone>
+            <PhoneNumberHolder>
+              <Phone href={"tel:" + edge.node.phoneNumber}>
+                {edge.node.phoneNumber}
+              </Phone>
+              <Phone href={"tel:" + edge.node.mobileNumber}>
+                {edge.node.mobileNumber}
+              </Phone>
+            </PhoneNumberHolder>
           </PhoneHolder>
           <Email href={"mailto:" + edge.node.email}>{edge.node.email}</Email>
         </ContactHolder>
@@ -148,12 +161,13 @@ export default ContactPage
 
 export const contactQuery = graphql`
   query contactQuery {
-    allContentfulContactDetails {
+    allContentfulContactDetails(sort: { fields: title }) {
       edges {
         node {
           name
           title
           phoneNumber
+          mobileNumber
           email
           picture {
             fluid {

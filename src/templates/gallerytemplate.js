@@ -29,7 +29,7 @@ const EventImageCaption = styled.p`
   margin-top: 5px;
 `
 
-export default ({ data, pageContext }) => {
+const GalleryTemplate = ({ data, pageContext }) => {
   const { event } = pageContext
   return (
     <Layout>
@@ -52,6 +52,8 @@ export default ({ data, pageContext }) => {
     </Layout>
   )
 }
+
+export default GalleryTemplate
 
 export const query = graphql`
   query galleryTemplateQuery($event: String!) {

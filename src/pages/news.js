@@ -34,12 +34,13 @@ const NewsExcerptHeading = styled.h2`
   margin-bottom: 1rem;
 `
 
-const NewsExcerpt = styled.div`
+const NewsExcerpt = styled.p`
   color: #161616;
   font-family: "Libre Baskerville", serif;
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
+  max-width: 70%;
 `
 
 const ReadMore = styled.p`
@@ -85,7 +86,7 @@ export default NewsPage
 
 export const newsQuery = graphql`
   query newsQuery {
-    allContentfulNewsletter(sort: { fields: date }) {
+    allContentfulNewsletter(sort: { fields: date, order: DESC }) {
       edges {
         node {
           title
