@@ -54,27 +54,10 @@ const LandingHeader = styled.h1`
 const LandingMessage = styled.p`
   color: #181414;
   font-size: 1.7vw;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   @media (max-width: 900px) {
     font-size: 3vw;
-    margin-bottom: 1.5rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 4vw;
-  }
-`
-
-const MeetingHeader = styled.h2`
-  background: #ccedab;
-  border-radius: 47px;
-  color: #193003;
-  font-size: 2.1vw;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  text-align: center;
-  max-width: 17rem;
-  @media (max-width: 900px) {
-    font-size: 3.5vw;
+    margin-bottom: 1rem;
   }
   @media (max-width: 600px) {
     font-size: 4vw;
@@ -93,7 +76,7 @@ const MeetingTextHolder = styled.div`
 `
 
 const MeetingText = styled.h4`
-  color: #193003;
+  color: #808080;
   font-style: normal;
   font-weight: 700;
   font-size: 2.1vw;
@@ -103,7 +86,7 @@ const MeetingText = styled.h4`
     color: inherit;
     text-decoration: none;
     :hover {
-      color: #407010;
+      color: #578f1e;
     }
   }
   @media (max-width: 900px) {
@@ -129,12 +112,11 @@ const IndexPage = ({ data }) => (
           workshops and competitions, giving you the opportunity to increase
           your skills and have fun
         </LandingMessage>
-        <MeetingHeader>NEXT MEETING</MeetingHeader>
         <MeetingTextHolder>
-          <MeetingText>Monday, July 1, 8pm</MeetingText>
           <MeetingText>
+            We meet on the third Monday of every month at&nbsp;
             <a href="https://www.google.com/maps/place/St+Dunstan's+Church,+Canterbury/@51.283687,1.0685673,17z/data=!4m5!3m4!1s0x47decbb75bd7c775:0x997b786bae47a78f!8m2!3d51.2836868!4d1.0707559">
-              St Dunstan’s Church Hall
+              St Dunstan’s Church Hall, Canterbury
             </a>
           </MeetingText>
         </MeetingTextHolder>

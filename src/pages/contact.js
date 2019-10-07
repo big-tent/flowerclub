@@ -30,9 +30,8 @@ const NameHolder = styled.div`
 `
 
 const MugShot = styled(Img)`
+  border: 0.3px solid #666666;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 8px 8px rgba(0, 0, 0, 1);
-  height: 60px;
   margin-right: 1rem;
   object-fit: cover;
   width: 60px;
@@ -41,14 +40,14 @@ const MugShot = styled(Img)`
 const NameTitleHolder = styled.div``
 
 const Name = styled.h3`
-  color: #161616;
+  color: #333333;
   font-size: 30px;
 `
 
 const Title = styled.h6`
   font-size: 24px;
   font-weight: normal;
-  color: #161616;
+  color: #666666;
 `
 
 const PhoneHolder = styled.div`
@@ -79,8 +78,10 @@ const Phone = styled.a`
 
 const Email = styled.a`
   color: #808080;
+  display: block;
   font-weight: 700;
   font-size: 18px;
+  padding-top: 0.5rem;
   text-decoration: none;
   :hover {
     color: #4d4d4d;
@@ -160,7 +161,7 @@ export default ContactPage
 
 export const contactQuery = graphql`
   query contactQuery {
-    allContentfulContactDetails {
+    allContentfulContactDetails(sort: { fields: title }) {
       edges {
         node {
           name
