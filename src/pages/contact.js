@@ -97,7 +97,7 @@ const Phone = styled.a`
 const Email = styled.a`
   color: #808080;
   display: block;
-  font-size: 4.3vw;
+  font-size: 4.2vw;
   font-weight: 700;
   padding-top: 0.5rem;
   text-decoration: none;
