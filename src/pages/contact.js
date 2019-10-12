@@ -15,6 +15,9 @@ const ContactsGrid = styled.ul`
   grid-auto-rows: auto;
   grid-gap: 20px;
   padding: 2rem 0;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 `
 
 const ContactHolder = styled.li`
@@ -41,13 +44,22 @@ const NameTitleHolder = styled.div``
 
 const Name = styled.h3`
   color: #333333;
-  font-size: 30px;
+  font-size: 6.5vw;
+  @media (min-width: 600px) {
+    font-size: 3.3vw;
+  }
+  @media (min-width: 900px) {
+    font-size: 1.5rem;
+  }
 `
 
 const Title = styled.h6`
-  font-size: 24px;
+  font-size: 6vw;
   font-weight: normal;
   color: #666666;
+  @media (min-width: 600px) {
+    font-size: 1.2rem;
+  }
 `
 
 const PhoneHolder = styled.div`
@@ -66,7 +78,7 @@ const PhoneNumberHolder = styled.div``
 
 const Phone = styled.a`
   display: block;
-  font-size: 36px;
+  font-size: 8vw;
   color: #808080;
   line-height: 1.1;
   text-decoration: none;
@@ -74,18 +86,30 @@ const Phone = styled.a`
     font-weight: 600;
     cursor: pointer;
   }
+  @media (min-width: 600px) {
+    font-size: 4vw;
+  }
+  @media (min-width: 900px) {
+    font-size: 1.8rem;
+  }
 `
 
 const Email = styled.a`
   color: #808080;
   display: block;
+  font-size: 4.3vw;
   font-weight: 700;
-  font-size: 18px;
   padding-top: 0.5rem;
   text-decoration: none;
   :hover {
     color: #4d4d4d;
     cursor: pointer;
+  }
+  @media (min-width: 600px) {
+    font-size: 2vw;
+  }
+  @media (min-width: 900px) {
+    font-size: 0.9rem;
   }
 `
 
