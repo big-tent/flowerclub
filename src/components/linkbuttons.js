@@ -9,6 +9,7 @@ const LinkButtonsHolder = styled.aside`
   align-items: center;
   position: fixed;
   right: 0;
+  z-index: 1;
   @media (max-width: 900px) {
     bottom: 0;
     height: auto;

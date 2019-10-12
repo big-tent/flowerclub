@@ -3,11 +3,11 @@ import styled from "styled-components"
 
 const PageTitle = styled.h1`
   border-bottom: 2px solid #cccccc;
-  font-size: 48px;
+  font-size: 9vw;
   margin: 0;
   padding-bottom: 2rem;
-  @media (max-width: 600px) {
-    font-size: 8.5vw;
+  @media (min-width: 600px) {
+    font-size: 2.4rem;
   }
 `
 
