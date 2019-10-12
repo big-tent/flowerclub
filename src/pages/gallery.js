@@ -9,10 +9,13 @@ import PageHeader from "../components/pageheader"
 
 const GalleryGrid = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 400px;
   grid-gap: 20px;
   padding: 2rem 0;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `
 
 const GalleryListingItem = styled.li`

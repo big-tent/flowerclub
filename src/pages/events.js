@@ -104,7 +104,7 @@ const EventListing = ({ node }) => (
 const EventsPage = ({ data }) => (
   <Layout>
     <SEO title="Events" />
-    <PageHeader pagetitle="Upcoming events" />
+    <PageHeader pagetitle="Calendar of events" />
     <ul>
       {data.allContentfulEvent.edges.map((edge, i) => (
         <EventListing node={edge.node} key={i} />

@@ -40,7 +40,9 @@ const NewsExcerpt = styled.p`
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
-  max-width: 70%;
+  @media (min-width: 900px) {
+    max-width: 70%;
+  }
 `
 
 const ReadMore = styled.p`
