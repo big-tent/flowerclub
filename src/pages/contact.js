@@ -6,8 +6,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
-import Chevron from "../components/svg/chevron-svg"
 import phone from "../images/phone-icon-grey.svg"
+import logo from "../images/flower-club-logo-flower.svg"
 
 const ContactsGrid = styled.ul`
   display: grid;
@@ -116,9 +116,12 @@ const Email = styled.a`
 const LinkHeader = styled.h2`
   border-top: 2px solid #cccccc;
   color: #666666;
-  font-size: 42px;
+  font-size: 9vw;
   font-weight: bold;
   padding-top: 2rem;
+  @media (min-width: 600px) {
+    font-size: 2rem;
+  }
 `
 
 const LinkHolder = styled.div`
@@ -127,12 +130,23 @@ const LinkHolder = styled.div`
   margin-top: 1rem;
 `
 
+const LinkLogo = styled.img`
+  height: 1.5rem;
+  margin-right: 1rem;
+  transition: 1s all;
+  :hover {
+    transform: rotate(360deg);
+  }
+`
+
 const Link = styled.a`
   color: #666666;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.2rem;
   text-decoration: none;
-  margin-left: 1rem;
+  @media (min-width: 600px) {
+    font-size: 1.5rem;
+  }
   :hover {
     color: #578f1e;
   }
@@ -169,13 +183,13 @@ const ContactPage = ({ data }) => (
     </ContactsGrid>
     <LinkHeader>Links</LinkHeader>
     <LinkHolder>
-      <Chevron />
+      <LinkLogo src={logo} alt="Flower club logo" />
       <Link href="https://www.nafas.org.uk/">
         National Association of Flower Arranging Societies
       </Link>
     </LinkHolder>
     <LinkHolder>
-      <Chevron />
+      <LinkLogo src={logo} alt="Flower club logo" />
       <Link href="https://www.kentfloralart.co.uk/">Kent Nafas</Link>
     </LinkHolder>
   </Layout>

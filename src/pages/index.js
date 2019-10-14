@@ -78,12 +78,13 @@ const MeetingTextHolder = styled.div`
 const MeetingText = styled.h4`
   color: #808080;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2.1vw;
   line-height: 1.3;
   margin-right: 2rem;
   a {
     color: inherit;
+    font-weight: 700;
     text-decoration: none;
     :hover {
       color: #578f1e;
