@@ -116,8 +116,8 @@ const IndexPage = ({ data }) => (
         <MeetingTextHolder>
           <MeetingText>
             We meet on the third Monday of every month at&nbsp;
-            <a href="https://www.google.com/maps/place/St+Dunstan's+Church,+Canterbury/@51.283687,1.0685673,17z/data=!4m5!3m4!1s0x47decbb75bd7c775:0x997b786bae47a78f!8m2!3d51.2836868!4d1.0707559">
-              St Dunstan’s Church Hall, Canterbury
+            <a href="https://www.google.com/maps/place/151+Ashford+Rd,+Canterbury/@51.2691147,1.0475796,17z/data=!3m1!4b1!4m5!3m4!1s0x47decbfacc7827dd:0x636762191b2d448a!8m2!3d51.2691147!4d1.0497683">
+              the Ashford Road Community Association Hall
             </a>
           </MeetingText>
         </MeetingTextHolder>
