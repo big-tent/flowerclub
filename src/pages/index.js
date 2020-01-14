@@ -117,7 +117,7 @@ const IndexPage = ({ data }) => (
           <MeetingText>
             We meet on the third Monday of every month at the&nbsp;
             <a href="https://www.google.com/maps/place/151+Ashford+Rd,+Canterbury/@51.2691147,1.0475796,17z/data=!3m1!4b1!4m5!3m4!1s0x47decbfacc7827dd:0x636762191b2d448a!8m2!3d51.2691147!4d1.0497683">
-              the Ashford Road Community Association Hall
+              Ashford Road Community Association Hall
             </a>
           </MeetingText>
         </MeetingTextHolder>
