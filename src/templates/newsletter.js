@@ -16,6 +16,9 @@ const NewsCopy = styled.div`
   font-family: "Libre Baskerville", serif;
   line-height: 1.5;
   margin-top: 2rem;
+  h3 {
+    margin-top: 1rem;
+  }
 `
 
 export default ({ data }) => {
