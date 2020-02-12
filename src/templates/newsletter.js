@@ -17,7 +17,8 @@ const NewsCopy = styled.div`
   line-height: 1.5;
   margin-top: 2rem;
   h3 {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 `
 
