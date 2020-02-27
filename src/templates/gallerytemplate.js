@@ -20,7 +20,7 @@ const EventGalleryListingItem = styled.li`
 `
 
 const EventImage = styled(Img)`
-  height: 90%;
+  /* height: 100%; */
 `
 
 const EventImageCaption = styled.p`
